@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Multi-Factor Authentication &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Multi-Factor Authentication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cluster/login/manage_tokens.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multi-factor-authentication">
+<h1>Multi-Factor Authentication<a class="headerlink" href="#multi-factor-authentication" title="Permalink to this headline">¶</a></h1>
+<p>Mila is implementing a multi-factor authentication to further secure the ssh access to the cluster.
+While you will still have the ability to login with your password or an ssh-key pair, <strong>once every 7 days</strong>
+you will have to complete a 2nd-factor authentication.</p>
+<p>The Token generation will be provided by an internal service called PrivacyIdea
+and it currently supports the following token forms:</p>
+<ul class="simple">
+<li><p>Email</p></li>
+<li><p>SMS</p></li>
+<li><p>TOTP will Google Authenticator</p></li>
+<li><p>Push with the PrivacyIdea Mobile App</p></li>
+</ul>
+<p><strong>OTP = One-Time Password</strong></p>
+<div class="section" id="connection-procedure">
+<h2>Connection procedure<a class="headerlink" href="#connection-procedure" title="Permalink to this headline">¶</a></h2>
+<p>Login-nodes are protected with multi-factor authentication. On your first connection, you will be guided through
+the generation of your first token. Afterwards you will have the ability to connect to the PrivacyIdea WebUI
+to manage and create new token.</p>
+<div class="section" id="if-you-don-t-have-a-token-yet">
+<h3>If you don’t have a token yet<a class="headerlink" href="#if-you-don-t-have-a-token-yet" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When you ssh into a login-node you will be prompted to choose the type of 2FA
+token you want to generate and to choose a PIN associated with it:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user@workstation ~<span class="o">]</span>$ ssh my_username@loginnode
+
+Please choose the token to generate:
+<span class="o">[</span><span class="m">1</span><span class="o">]</span> Email
+<span class="o">[</span><span class="m">2</span><span class="o">]</span> Push
+<span class="o">[</span><span class="m">3</span><span class="o">]</span> Google Authenticator
+
+Please choose a <span class="m">4</span>-digit minimum PIN:
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Choose a new PIN and confirm it. Once chosen, you will receive a confirmation that your token has been created in PrivacyIdea</p></li>
+</ul>
+<img alt="new_token" class="align-center" src="../../_images/new_token.png" />
+<ul class="simple">
+<li><p>For each token type, proceed accordingly:</p>
+<ul>
+<li><p><strong>PUSH:</strong> open the generated link to scan the QR Code with the PrivacyIdea Application</p></li>
+<li><p><strong>TOTP:</strong> scan or open the generated link with the QR Code to use with the Google Authenticator Application.</p></li>
+<li><p><strong>Mail/SMS:</strong> no further action is required.</p></li>
+</ul>
+</li>
+<li><p>You can then proceed to the next section</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can have multiple token types associated with your account. Just remember that a <strong>PIN triggers
+the associated 2FA token</strong> so don’t choose the same PIN for different tokens.</p>
+</div>
+</div>
+<div class="section" id="when-you-have-a-token">
+<h3>When you have a token<a class="headerlink" href="#when-you-have-a-token" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>When you ssh into a login-node you will be prompted to enter your <strong>2FA PIN/OTP</strong>  (PIN or PIN+OTP for TOTP)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>user@workstation ~<span class="o">]</span>$ ssh my_username@loginnode
+
+Enter your 2FA PIN/OTP:
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Depending on the type of token, actions will be different:</p>
+<ul>
+<li><p><strong>PUSH:</strong> enter the associated PIN and wait for the notification on your mobile to confirm.</p></li>
+<li><p><strong>Mail/SMS:</strong> enter the associated PIN and wait for your OTP and enter it in the shell.</p></li>
+<li><p><strong>TOTP:</strong> enter the PIN+TOTP concatenated.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Example for the mail token</em>:</p>
+<ol class="arabic simple">
+<li><p>Enter the PIN and you will receive your One-Time Password by mail:</p></li>
+</ol>
+<img alt="email_token" class="align-center" src="../../_images/email_token.png" />
+<ol class="arabic simple" start="2">
+<li><p>You can then enter it in your shell</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...
+Enter the OTP from the Email:
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you get a <code class="docutils literal notranslate"><span class="pre">Connection</span> <span class="pre">closed</span> <span class="pre">by</span> <span class="pre">172.XX.XX.XX</span> <span class="pre">port</span> <span class="pre">2222</span></code>, it means you
+have waited too much time between 2 steps of the authentication.
+You can start again but remember there is a <em>10-error maximum counter on each account</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="generate-and-manage-tokens">
+<h2>Generate and manage Tokens<a class="headerlink" href="#generate-and-manage-tokens" title="Permalink to this headline">¶</a></h2>
+<p>If you went through the previous section you should already have a token associated with your account.
+To manage the tokens associated with your account you can log into the PrivacyIdea website
+with your <strong>Gsuite credentials</strong>:
+<a class="reference external" href="https://auth.server.mila.quebec/">https://auth.server.mila.quebec/</a></p>
+<p>Once connected you should get the list of all your tokens:</p>
+<img alt="pi_webui" class="align-center" src="../../_images/pi_webui.png" />
+<p><strong>REMEMBER: 1 PIN = 1 Token</strong>, do not use the same PIN for each authentication. When you enter a PIN during the authentication,
+it will trigger the associated token authentication.</p>
+<div class="section" id="reset-a-pin">
+<h3>Reset a PIN<a class="headerlink" href="#reset-a-pin" title="Permalink to this headline">¶</a></h3>
+<p>If you click on a Token, you will get more information on it and you will be able to reset its PIN by using the <strong>Set PIN</strong> button:</p>
+<img alt="reset_pin" class="align-center" src="../../_images/reset_pin.png" />
+</div>
+<div class="section" id="generate-an-sms-token">
+<h3>Generate an SMS Token<a class="headerlink" href="#generate-an-sms-token" title="Permalink to this headline">¶</a></h3>
+<p>Mila doesn’t keep a list of all phone numbers so you are responsible for adding
+the correct phone number to your SMS token.</p>
+<p>To generate a new SMS Token, click and <strong>Enroll Token</strong> and fill-out the form
+with your <strong>Phone Number</strong> and choose a new <strong>PIN</strong> that will be associated with SMS authentication:</p>
+<img alt="sms_token" class="align-center" src="../../_images/sms_token.png" />
+<p>And click on the <strong>Enroll Token</strong>.</p>
+</div>
+<div class="section" id="generate-a-totp-token">
+<h3>Generate a TOTP Token<a class="headerlink" href="#generate-a-totp-token" title="Permalink to this headline">¶</a></h3>
+<p>TOTP stands for Time-based One-Time Password and are generated through
+2-Step Verification code application like <strong>Google Authenticator</strong>.</p>
+<p>If you want to use a TOTP token, you must first install Google Authenticator or
+any supported Verification code generator. Then click on <strong>Enroll Token</strong> and
+leave all default values and choose a new <strong>PIN</strong> that will be associated with TOTP authentication:</p>
+<img alt="totp_token" class="align-center" src="../../_images/totp_token.png" />
+<p>Click on the <strong>Enroll Token</strong>. A QR Code that you can scan with your mobile
+application will be generated to set-up the corresponding token on your phone
+(a copy will be sent to your email):</p>
+<img alt="qr_code" class="align-center" src="../../_images/qr_code.png" />
+<p>To authenticate with a TOTP while login into a login node you will have
+to enter your <strong>PIN</strong> + the <strong>TOPT</strong> concatenated, i.e. if your PIN is <em>1234</em>
+and the generated TOPT is <em>785698</em> you will have to enter <em>1234785698</em>
+when prompted for the PIN/OTP.</p>
+</div>
+<div class="section" id="generate-a-push-token">
+<h3>Generate a Push Token<a class="headerlink" href="#generate-a-push-token" title="Permalink to this headline">¶</a></h3>
+<p>A mobile application by PrivacyIdea is provided to trigger a Push Authentication
+that will only requires to validate the connection through a notification.</p>
+<p>To start you will need to install the PrivacyIdea Authenticator App:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://play.google.com/store/apps/details?id=it.netknights.piauthenticator">Android</a></p></li>
+<li><p><a class="reference external" href="https://apps.apple.com/us/app/privacyidea-authenticator/id1445401301">IOS</a></p></li>
+</ul>
+<p>To generate a new PUSH Token, click and <strong>Enroll Token</strong> and choose a new <strong>PIN</strong> that will be associated with PUSH authentication:</p>
+<img alt="qr_code" class="align-center" src="../../_images/push_token.png" />
+<p>Click on the <strong>Enroll Token</strong>. A QR Code that you can scan with the PrivacyIdea mobile application will
+be generated to set-up the corresponding token on your phone:</p>
+<img alt="qr_code" class="align-center" src="../../_images/qr_code_push.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

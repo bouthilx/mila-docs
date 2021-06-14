@@ -1,0 +1,411 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SLURM Architecture &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mila-cluster/index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SLURM Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cloud-cluster/slurm.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="slurm-architecture">
+<h1>SLURM Architecture<a class="headerlink" href="#slurm-architecture" title="Permalink to this headline">¶</a></h1>
+<p>On the cloud clusters, only the login nodes and the SLURM controller are static.
+The compute nodes are deployed on-demand (<code class="docutils literal notranslate"><span class="pre">STATE=CLOUD</span></code> in the SLURM config) i.e. each time you submit a job,
+SLURM allocate a node to your job and send a request to a middleware to start the node.
+It can take up to <em>5 minutes to boot</em> a node depending of the load, that is why batch (<code class="docutils literal notranslate"><span class="pre">sbatch</span></code>) jobs are
+encouraged. If you need to start interactive jobs, you should look at wrapping a interactive shell inside a
+batch job (jupyterhub/notebook, smux/tmux, etc…). If your allocated node did not boot
+in the expected time, your job will be requeued and you will not loose your priority in the queue.</p>
+<div class="section" id="compute-nodes">
+<h2>Compute Nodes<a class="headerlink" href="#compute-nodes" title="Permalink to this headline">¶</a></h2>
+<p>Compute Nodes on every provider are running on preemptible VMs i.e. your node can be
+disconnected at any time (GCP reboot preemptible nodes every 24h but send a signal that can be caught…todo).</p>
+<div class="section" id="automatic-routing">
+<h3>Automatic routing<a class="headerlink" href="#automatic-routing" title="Permalink to this headline">¶</a></h3>
+<p>For convenience, an automatic routing script has been implemented to allocate the right-sized node to your job.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For now only single-node computation are allowed in the beta phase</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>No need to specify a queue as your job is automatically routed to the queue containing nodes with the required number of GPUs/RAM
+SLURM jobs run with 1 task, 1 node, and the number of CPUs matching the number of CPUs-per-GPU on the specified cloud provider</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Submission</p></th>
+<th class="head"><p>Equivalent partition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">--gres=gpu:v100:2</span></code></p></td>
+<td><p>Partiton=azureV100x2Cloud</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">-c6</span> <span class="pre">--mem=64G</span></code></p></td>
+<td><p>Partiton=azureGeneralCPUCloud</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">--gres=gpu:k80:1</span></code></p></td>
+<td><p>Partiton=azureK80x1Cloud</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="current-partitions-on-azure-gcp">
+<h3>Current partitions on Azure/GCP<a class="headerlink" href="#current-partitions-on-azure-gcp" title="Permalink to this headline">¶</a></h3>
+<p>To display the available queues</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">sinfo -l --format<span class="o">=</span><span class="s2">&quot;%P %z %m %G %N&quot;</span></span>
+</pre></div></div><table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 24%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Azure</p></th>
+<th class="head"><p>Sockets/Cores/Threads</p></th>
+<th class="head"><p>RAM</p></th>
+<th class="head"><p>Gres</p></th>
+<th class="head"><p>Nodes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>azureComputeCPUCloud</p></td>
+<td><p>2:4:2</p></td>
+<td><p>32000</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>azure-c8-32g-kobe[1-18]</p></td>
+</tr>
+<tr class="row-odd"><td><p>azureGeneralCPUCloud</p></td>
+<td><p>2:4:2</p></td>
+<td><p>64000</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>azure-c8-64g-yokohama[1-8]</p></td>
+</tr>
+<tr class="row-even"><td><p>azureMemoryCPUCloud</p></td>
+<td><p>2:4:2</p></td>
+<td><p>128000</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>azure-c8-128g-tokyo[1-8]</p></td>
+</tr>
+<tr class="row-odd"><td><p>azureV100x1Cloud</p></td>
+<td><p>1:6:1</p></td>
+<td><p>112000</p></td>
+<td><p>gpu:v100:1</p></td>
+<td><p>azure-gv100-canberra[1-12]</p></td>
+</tr>
+<tr class="row-even"><td><p>azureV100x2Cloud</p></td>
+<td><p>1:12:1</p></td>
+<td><p>224000</p></td>
+<td><p>gpu:v100:2</p></td>
+<td><p>azure-gv100x2-brisbane[1-4]</p></td>
+</tr>
+<tr class="row-odd"><td><p>azureV100x4Cloud</p></td>
+<td><p>2:12:1</p></td>
+<td><p>448000</p></td>
+<td><p>gpu:v100:4</p></td>
+<td><p>azure-gv100x4-melbourne[1-2]</p></td>
+</tr>
+<tr class="row-even"><td><p>azureK80x1Cloud</p></td>
+<td><p>1:6:1</p></td>
+<td><p>56000</p></td>
+<td><p>gpu:k80:1</p></td>
+<td><p>azure-gk80-manchester[1-48]</p></td>
+</tr>
+<tr class="row-odd"><td><p>azureK80x2Cloud</p></td>
+<td><p>1:12:1</p></td>
+<td><p>112000</p></td>
+<td><p>gpu:k80:2</p></td>
+<td><p>azure-gk80x2-birmingham[1-8]</p></td>
+</tr>
+<tr class="row-even"><td><p>azureK80x4Cloud</p></td>
+<td><p>2:12:1</p></td>
+<td><p>224000</p></td>
+<td><p>gpu:k80:4</p></td>
+<td><p>azure-gk80x4-london[1-8]</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The limit in the number of nodes per family is currently higher than what is reflected in the partitions
+but more nodes will be added gradually</p>
+</div>
+</div>
+</div>
+<div class="section" id="quotas">
+<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h2>
+<p>In SLURM, every job is recorded and consumes resources. To limit the consumption per-user according to
+what you have been granted in terms of $, each account is associated with
+a <code class="docutils literal notranslate"><span class="pre">TRESMins</span></code> maximum that you can access using <code class="docutils literal notranslate"><span class="pre">sshare</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each element of a node (CPU, Mem, GPU) contributes to the TRESMins and there is a limit per element e.g.
+a job of 60mins running on 6 cpus and 1 V100 GPU will consume <em>6x60xCPUmins</em> and <em>1x60xGRESmins</em></p>
+</div>
+<p>Checking your Quota/Limits</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sshare -A <span class="nv">$LOGNAME</span> -o Account,GrpTRESMIns,GrpTRESRaw%200</span>
+</pre></div></div><p>For convenience, a custom script is available in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> called <code class="docutils literal notranslate"><span class="pre">squotas</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">squotas</span>
+</pre></div></div></div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

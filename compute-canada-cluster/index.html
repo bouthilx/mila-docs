@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compute Canada Clusters &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/>
+        <link rel="next" title="Modules" href="../software/index.html"/>
+        <link rel="prev" title="Cluster Nodes" href="../mila-cluster/nodes.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../mila-cluster/index.html">Mila Cluster</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compute Canada Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#account-creation">Account Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clusters">Clusters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#beluga">Beluga</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#launching-jobs">Launching Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nodes">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storage">Storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-example">Script Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-cometml-and-wandb">Using CometML and Wandb</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#graham">Graham</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cedar">Cedar</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#faq">FAQ</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Compute Canada Clusters</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/compute-canada-cluster/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compute-canada-clusters">
+<span id="cc-clusters"></span><h1>Compute Canada Clusters<a class="headerlink" href="#compute-canada-clusters" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="account-creation">
+<h2>Account Creation<a class="headerlink" href="#account-creation" title="Permalink to this headline">¶</a></h2>
+<p>To access the Compute Canada (CC) clusters you have to first create an account at <a class="reference external" href="https://ccdb.computecanada.ca">https://ccdb.computecanada.ca</a>. Use a password with at least 8 characters, mixed case letters, digits and special characters. Later you will be asked to create another password with those rules, and it’s really convenient that the two password are the same.</p>
+<p>Then, you have to apply for a <code class="docutils literal notranslate"><span class="pre">role</span></code> at <a class="reference external" href="https://ccdb.computecanada.ca/me/add_role">https://ccdb.computecanada.ca/me/add_role</a>, which basically means telling CC that you are part of the lab so they know which cluster you can have access to, and track your usage.</p>
+<p>You will be asked for the CCRI (See screenshot below). Please reach out to your sponsor to get the CCRI.</p>
+<img alt="role.png" class="align-center" src="../_images/role.png" />
+<p>You will need to <strong>wait</strong> for your sponsor to accept before being able to login to the CC clusters.</p>
+</div>
+<div class="section" id="clusters">
+<h2>Clusters<a class="headerlink" href="#clusters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="beluga">
+<span id="id1"></span><h3>Beluga<a class="headerlink" href="#beluga" title="Permalink to this headline">¶</a></h3>
+<p>Beluga is a cluster located at ETS in Montreal. It uses <cite>Slurm</cite> to schedule jobs. Its full documentation can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/Béluga/en">here</a>, and its current status <a class="reference external" href="http://status.computecanada.ca">here</a>.</p>
+<p>You can access Beluga via ssh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ssh &lt;user&gt;@beluga.computecanada.ca</span>
+</pre></div></div><p>Where <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> is the username you created previously (see <a class="reference internal" href="#account-creation">Account Creation</a>).</p>
+<div class="section" id="launching-jobs">
+<h4>Launching Jobs<a class="headerlink" href="#launching-jobs" title="Permalink to this headline">¶</a></h4>
+<p>Users must specify the resource allocation Group Name using the flag <code class="docutils literal notranslate"><span class="pre">--account=rrg-bengioy-ad</span></code>.
+To launch a CPU-only job:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch --time<span class="o">=</span><span class="m">1</span>:0:0 --account<span class="o">=</span>rrg-bengioy-ad job.sh</span>
+</pre></div></div><p>To launch a GPU job:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch --time<span class="o">=</span><span class="m">1</span>:0:0 --account<span class="o">=</span>rrg-bengioy-ad --gres<span class="o">=</span>gpu:1 job.sh</span>
+</pre></div></div><p>And to get an interactive session, use the <code class="docutils literal notranslate"><span class="pre">salloc</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">salloc --time<span class="o">=</span><span class="m">1</span>:0:0 --account<span class="o">=</span>rrg-bengioy-ad --gres<span class="o">=</span>gpu:1</span>
+</pre></div></div><p>The full documentation for jobs launching on Beluga can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/Running_jobs">here</a>.</p>
+</div>
+<div class="section" id="nodes">
+<h4>Nodes<a class="headerlink" href="#nodes" title="Permalink to this headline">¶</a></h4>
+<p>The GPU nodes consist of:</p>
+<ul class="simple">
+<li><p>40 CPU cores</p></li>
+<li><p>186 GB RAM</p></li>
+<li><p>4 GPU NVIDIA V100 (16GB)</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You should ask for max 10 CPU cores and 32 GB of RAM per GPU you are requesting (as explained <a class="reference external" href="https://docs.computecanada.ca/wiki/Allocations_and_resource_scheduling">here</a>), otherwise, your job will count for more than 1 allocation, and will take more time to get scheduled.</p>
+</div>
+</div>
+<div class="section" id="storage">
+<span id="cc-storage"></span><h4>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 34%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Storage</p></th>
+<th class="head"><p>Path</p></th>
+<th class="head"><p>Usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$HOME</p></td>
+<td><p>/home/&lt;user&gt;/</p></td>
+<td><ul class="simple">
+<li><p>Code</p></li>
+<li><p>Specific libraries</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$HOME/projects</p></td>
+<td><p>/project/rpp-bengioy</p></td>
+<td><ul class="simple">
+<li><p>Compressed raw datasets</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>$SCRATCH</p></td>
+<td><p>/scratch/&lt;user&gt;</p></td>
+<td><ul class="simple">
+<li><p>Processed datasets</p></li>
+<li><p>Experimental results</p></li>
+<li><p>Logs of experiments</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>$SLURM_TMPDIR</p></td>
+<td></td>
+<td><ul class="simple">
+<li><p>Temporary job results</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>They are roughly listed in order of increasing performance and optimized for different uses:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">$HOME</span></code> folder on NFS is appropriate for codes and libraries which are small and read once. <strong>Do not write experiemental results here!</strong></p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">/projects</span></code> folder should only contain <strong>compressed raw</strong> datasets (<strong>processed</strong> datasets should go in <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code>). We have a limit on the size and number of file in <code class="docutils literal notranslate"><span class="pre">/projects</span></code>, so do not put anything else there. If you add a new dataset there (make sure it is readable by every member of the group using <code class="docutils literal notranslate"><span class="pre">chgrp</span> <span class="pre">-R</span> <span class="pre">rpp-bengioy</span> <span class="pre">&lt;dataset&gt;</span></code>).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">$SCRATCH</span></code> space can be used for short term storage. It has good performance and large quotas, but is purged regularly (every file that has not been used in the last 3 months gets deleted, but you receive an email before this happens).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> points to the local disk of the node on which a job is running. It should be used to copy the data on the node at the beginning of the job and write intermediate checkpoints. This folder is cleared after each job.</p></li>
+</ul>
+<p>When an experiment is finished, results should be transferred back to Mila servers.</p>
+<p>More details on storage can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/B%C3%A9luga/en#Storage">here</a>.</p>
+</div>
+<div class="section" id="modules">
+<h4>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h4>
+<p>Many software, such as Python or MATLAB are already compiled and available on Beluga through the <code class="docutils literal notranslate"><span class="pre">module</span></code> command and its subcommands. Its full documentation can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/Utiliser_des_modules/en">here</a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>module avail</p></td>
+<td><p>Displays all the available modules</p></td>
+</tr>
+<tr class="row-even"><td><p>module load &lt;module&gt;</p></td>
+<td><p>Loads &lt;module&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>module spider &lt;module&gt;</p></td>
+<td><p>Shows specific details about &lt;module&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<p>In particular, if you with to use <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.6</span></code> you can simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">module load python/3.6</span>
+</pre></div></div><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you wish to use Python on the cluster, we strongly encourage you to read <a class="reference external" href="https://docs.computecanada.ca/wiki/Python">CC Python Documentation</a>, and in particular the <a class="reference external" href="https://docs.computecanada.ca/wiki/PyTorch">Pytorch</a> and/or <a class="reference external" href="https://docs.computecanada.ca/wiki/TensorFlow">Tensorflow</a> pages.</p>
+</div>
+<p>The cluster has many python packages (or <code class="docutils literal notranslate"><span class="pre">wheels</span></code>), such already compiled for the cluster. See <a class="reference external" href="https://docs.computecanada.ca/wiki/Python/en">here</a> for the details. In particular, you can browse the packages by doing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">avail_wheels &lt;wheel&gt;</span>
+</pre></div></div><p>Such wheels can be installed using pip. Moreover, the most efficient way to use modules on the cluster is to <a class="reference external" href="https://docs.computecanada.ca/wiki/Python#Creating_virtual_environments_inside_of_your_jobs">build your environnement inside your job</a>. See the script example below.</p>
+</div>
+<div class="section" id="script-example">
+<h4>Script Example<a class="headerlink" href="#script-example" title="Permalink to this headline">¶</a></h4>
+<p>Here is a <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> script that follows good practices on Beluga:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --account=rrg-bengioy-ad         # Yoshua pays for your job</span>
+<span class="c1">#SBATCH --cpus-per-task=6                # Ask for 6 CPUs</span>
+<span class="c1">#SBATCH --gres=gpu:1                     # Ask for 1 GPU</span>
+<span class="c1">#SBATCH --mem=32G                        # Ask for 32 GB of RAM</span>
+<span class="c1">#SBATCH --time=3:00:00                   # The job will run for 3 hours</span>
+<span class="c1">#SBATCH -o /scratch/&lt;user&gt;/slurm-%j.out  # Write the log in $SCRATCH</span>
+
+<span class="c1"># 1. Create your environement locally</span>
+module load python/3.6
+virtualenv --no-download <span class="nv">$SLURM_TMPDIR</span>/env
+<span class="nb">source</span> <span class="nv">$SLURM_TMPDIR</span>/env/bin/activate
+pip install --no-index torch torchvision
+
+<span class="c1"># 2. Copy your dataset on the compute node</span>
+<span class="c1"># IMPORTANT: Your dataset must be compressed in one single file (zip, hdf5, ...)!!!</span>
+cp <span class="nv">$SCRATCH</span>/&lt;dataset.zip&gt; <span class="nv">$SLURM_TMPDIR</span>
+
+<span class="c1"># 3. Eventually unzip your dataset</span>
+unzip <span class="nv">$SLURM_TMPDIR</span>/&lt;dataset.zip&gt; -d <span class="nv">$SLURM_TMPDIR</span>
+
+<span class="c1"># 4. Launch your job, tell it to save the model in $SLURM_TMPDIR</span>
+<span class="c1">#    and look for the dataset into $SLURM_TMPDIR</span>
+python main.py --path <span class="nv">$SLURM_TMPDIR</span> --data_path <span class="nv">$SLURM_TMPDIR</span>
+
+<span class="c1"># 5. Copy whatever you want to save on $SCRATCH</span>
+cp <span class="nv">$SLURM_TMPDIR</span>/&lt;to_save&gt; <span class="nv">$SCRATCH</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="using-cometml-and-wandb">
+<h4>Using CometML and Wandb<a class="headerlink" href="#using-cometml-and-wandb" title="Permalink to this headline">¶</a></h4>
+<p>The compute nodes for Beluga don’t have access to the internet,
+but there is a special module that can be loaded in order to allow
+training scripts to access some specific servers, which includes
+the necessary servers for using CometML and Wandb (“Weights and Biases”).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">module load httpproxy</span>
+</pre></div></div><p>More documentation about this can be found at <cite>https://docs.computecanada.ca/wiki/Weights_%26_Biases_(wandb)</cite>.</p>
+</div>
+</div>
+<div class="section" id="graham">
+<span id="id2"></span><h3>Graham<a class="headerlink" href="#graham" title="Permalink to this headline">¶</a></h3>
+<p>Graham is a cluster located at University of Waterloo. It uses SLURM to schedule jobs. Its full documentation can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/Graham/">here</a>, and its current status <a class="reference external" href="http://status.computecanada.ca">here</a>.</p>
+<p>You can access Graham via ssh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh &lt;user&gt;@graham.computecanada.ca</span>
+</pre></div></div><p>Where <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> is the username you created previously (see <a class="reference internal" href="#account-creation">Account Creation</a>).</p>
+<p>Since its structure is similar to <cite>Beluga</cite>, please look at the <a class="reference internal" href="#beluga">Beluga</a> documentation, as well as relevant parts of the <a class="reference external" href="https://docs.computecanada.ca/wiki/Graham">Compute Canada Documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For GPU jobs the ressource allocation Group Name is the same as Beluga, so you should use the flag <code class="docutils literal notranslate"><span class="pre">--account=rrg-bengioy-ad</span></code> for GPU jobs.</p>
+</div>
+</div>
+<div class="section" id="cedar">
+<span id="id3"></span><h3>Cedar<a class="headerlink" href="#cedar" title="Permalink to this headline">¶</a></h3>
+<p>Cedar is a cluster located at Simon Fraser University. It uses SLURM to schedule jobs. Its full documentation can be found <a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar">here</a>, and its current status <a class="reference external" href="http://status.computecanada.ca">here</a>.</p>
+<p>You can access Cedar via ssh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">ssh &lt;user&gt;@cedar.computecanada.ca</span>
+</pre></div></div><p>Where <code class="docutils literal notranslate"><span class="pre">&lt;user&gt;</span></code> is the username you created previously (see <a class="reference internal" href="#account-creation">Account Creation</a>).</p>
+<p>Since its structure is similar to <cite>Beluga</cite>, please look at the <a class="reference internal" href="#beluga">Beluga</a> documentation, as well as relevant parts of the <a class="reference external" href="https://docs.computecanada.ca/wiki/Cedar">Compute Canada Documentation</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>However, we don’t have any CPU priority on Cedar, in this case you can use <code class="docutils literal notranslate"><span class="pre">--account=def-bengioy</span></code> for CPU. Thus, it might take some time before they start.</p>
+</div>
+</div>
+</div>
+<div class="section" id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>What to do with  <cite>ImportError: /lib64/libm.so.6: version GLIBC_2.23 not found</cite>?</dt><dd><p>The structure of the file system is different than a classical Linux, so your code has trouble finding libraries. See <a class="reference external" href="https://docs.computecanada.ca/wiki/Installing_software_in_your_home_directory#Installing_binary_packages">how to install binary packages</a>.</p>
+</dd>
+<dt>Disk quota exceeded error on <code class="docutils literal notranslate"><span class="pre">/project</span></code> file systems</dt><dd><p>You have files in <code class="docutils literal notranslate"><span class="pre">/project</span></code> with the wrong permissions. See <a class="reference external" href="https://docs.computecanada.ca/wiki/Frequently_Asked_Questions/en#Disk_quota_exceeded_error_on_.2Fproject_filesystems">how to change permissions</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../software/index.html" class="btn btn-neutral float-right" title="Modules" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../mila-cluster/nodes.html" class="btn btn-neutral" title="Cluster Nodes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

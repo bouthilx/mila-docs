@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../../index.html"/>
+        <link rel="up" title="Mila Cluster" href="../index.html"/>
+        <link rel="next" title="1 Frequently asked questions (FAQs)" href="../faq/index.html"/>
+        <link rel="prev" title="Mila Cluster" href="../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Mila Cluster</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notable-sections">Notable Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/index.html">FAQs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../nodes.html">Cluster Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#account-creation">Account Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#launching-jobs">Launching Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#storage">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#script-example">Script Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Mila Cluster</a> &raquo;</li>
+        
+      <li>Monitoring</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cluster/monitoring/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="monitoring">
+<h1>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this headline">¶</a></h1>
+<p>Every compute node on the Mila cluster has a monitoring daemon allowing you to
+check the resource usage of your model and identify bottlenecks.
+You can access the monitoring web page by typing in your browser: <code class="docutils literal notranslate"><span class="pre">&lt;node&gt;.server.mila.quebec:19999</span></code>.</p>
+<p>For example, if I have a job running on <code class="docutils literal notranslate"><span class="pre">eos1</span></code> I can type <code class="docutils literal notranslate"><span class="pre">eos1.server.mila.quebec:19999</span></code> and
+the page below should appear.</p>
+<img alt="monitoring.png" class="align-center" src="../../_images/monitoring.png" />
+<div class="section" id="notable-sections">
+<h2>Notable Sections<a class="headerlink" href="#notable-sections" title="Permalink to this headline">¶</a></h2>
+<p>You should focus your attention on the metrics below</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>CPU</dt><dd><ul>
+<li><p>iowait (pink line): High values means your model is waiting on IO a lot (disk or network)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="monitoring_cpu.png" class="align-center" src="../../_images/monitoring_cpu.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>RAM</dt><dd><ul>
+<li><p>Make sure you are only allocating enough to make your code run and not more otherwise you are wasting resources.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="monitoring_ram.png" class="align-center" src="../../_images/monitoring_ram.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>NV</dt><dd><ul>
+<li><p>Usage of each GPU</p></li>
+<li><dl class="simple">
+<dt>You should make sure you use the GPU to its fullest</dt><dd><ul>
+<li><p>Select the biggest batch size if possible</p></li>
+<li><p>Spawn multiple experiments</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="monitoring_gpu.png" class="align-center" src="../../_images/monitoring_gpu.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>Users:</dt><dd><ul>
+<li><p>In some cases the machine might seem slow, it may be useful to check if other people are using the machine as well</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="monitoring_users.png" class="align-center" src="../../_images/monitoring_users.png" />
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../faq/index.html" class="btn btn-neutral float-right" title="1 Frequently asked questions (FAQs)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Mila Cluster" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/language_data.js"></script>
+      <script type="text/javascript" src="../../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

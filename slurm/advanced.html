@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Usage &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/>
+        <link rel="next" title="Mila Cluster" href="../mila-cluster/index.html"/>
+        <link rel="prev" title="Quick Start" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#handling-preemption">Handling preemption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#packing-jobs">Packing jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-a-gpu-between-processes">Sharing a GPU between processes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-a-node-with-multiple-gpu-1process-gpu">Sharing a node with multiple GPU 1process/GPU</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-a-node-with-multiple-gpu-multiple-processes-gpu">Sharing a node with multiple GPU &amp; multiple processes/GPU</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mila-cluster/index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Advanced Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/slurm/advanced.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-usage">
+<h1>Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="handling-preemption">
+<h2>Handling preemption<a class="headerlink" href="#handling-preemption" title="Permalink to this headline">¶</a></h2>
+<p id="advanced-preemption">There are 2 types of preemption:</p>
+<ul class="simple">
+<li><p><strong>On the local cluster:</strong> jobs can preempt one-another depending on their priority (unkillable&gt;high&gt;low) (See the <a class="reference external" href="https://slurm.schedmd.com/preempt.html">Slurm documentation</a>)</p></li>
+<li><p><strong>On the cloud clusters:</strong> virtual machines can be preempted as a limitation of less expensive virtual machines (spot/low priority)</p></li>
+</ul>
+<p>On the local cluster, the default preemption mechanism is to killed and re-queue the job automatically without any notice. To allow a different preemption mechanism,
+every partition have been duplicated (i.e. have the same characteristics as their counterparts) allowing a <strong>120sec</strong> grace period
+before killing your job <em>but don’t requeue it automatically</em>: those partitions are referred by the suffix: <code class="docutils literal notranslate"><span class="pre">-grace</span></code> (<code class="docutils literal notranslate"><span class="pre">main-grace,</span> <span class="pre">low-grace,</span> <span class="pre">cpu_jobs-grace</span></code>).</p>
+<p>When using a partition with a grace period, a series of signals consisting of first <code class="docutils literal notranslate"><span class="pre">SIGCONT</span></code> and <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> then <code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code> will be sent to the SLURM job.
+It’s good practice to catch those signals using the Linux <code class="docutils literal notranslate"><span class="pre">trap</span></code> command to properly terminate a job and save what’s necessary to restart the job.
+On each cluster, you’ll be allowed a <em>grace period</em> before SLURM actually kills your job (<code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code>).</p>
+<p>The easiest way to handle preemption is by trapping the <code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code> signal</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --ntasks=1</span>
+<span class="c1">#SBATCH ....</span>
+
+exit_script<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Preemption signal, saving myself&quot;</span>
+    <span class="nb">trap</span> - SIGTERM <span class="c1"># clear the trap</span>
+    <span class="c1"># Optional: sends SIGTERM to child/sub processes</span>
+    <span class="nb">kill</span> -- -<span class="nv">$$</span>
+<span class="o">}</span>
+
+<span class="nb">trap</span> exit_script SIGTERM
+
+<span class="c1"># The main script part</span>
+python3 my_script
+</pre></div>
+</td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="line-block">
+<div class="line"><strong>Requeuing</strong>:</div>
+<div class="line">The local Slurm cluster does not allow a grace period before preempting a job while requeuing it automatically, therefore your job will be cancelled at the end of the grace period.</div>
+<div class="line">To automatically requeue it, you can just add the <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> command inside your <code class="docutils literal notranslate"><span class="pre">exit_script</span></code> function.</div>
+</div>
+</div>
+<p>The following table summarizes the different preemption mode and grace periods:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 29%" />
+<col style="width: 22%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cluster</p></th>
+<th class="head"><p>Signal(s)</p></th>
+<th class="head"><p>Grace Period</p></th>
+<th class="head"><p>Requeued</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>local</p></td>
+<td><p>SIGCONT/SIGTERM</p></td>
+<td><p>120s</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-odd"><td><p>Google Gloud (GCP)</p></td>
+<td><p>SIGCONT/SIGTERM</p></td>
+<td><p>30s</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>Amazon (AWS)</p></td>
+<td><p>SIGCONT/SIGTERM</p></td>
+<td><p>120s</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Azure</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="packing-jobs">
+<h2>Packing jobs<a class="headerlink" href="#packing-jobs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sharing-a-gpu-between-processes">
+<h3>Sharing a GPU between processes<a class="headerlink" href="#sharing-a-gpu-between-processes" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">srun</span></code>, when used in a batch job is responsible for starting tasks on the allocated resources (see srun)
+SLURM batch script</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">#SBATCH --ntasks-per-node=2</span>
+<span class="c1">#SBATCH --output=myjob_output_wrapper.out</span>
+<span class="c1">#SBATCH --ntasks=2</span>
+<span class="c1">#SBATCH --gres=gpu:1</span>
+<span class="c1">#SBATCH --cpus-per-task=4</span>
+<span class="c1">#SBATCH --mem=18G</span>
+srun -l --output<span class="o">=</span>myjob_output_%t.out python script args
+</pre></div>
+</td></tr></table></div>
+<p>this will run python 2 times, each process with 4 CPUs with the same arguments
+<code class="docutils literal notranslate"><span class="pre">--output=myjob_output_%t.out</span></code> will create 2 output files appending the task id (<code class="docutils literal notranslate"><span class="pre">%t</span></code>) to the filename and 1 global log file for things happening outside the <code class="docutils literal notranslate"><span class="pre">srun</span></code> command.</p>
+<p>Knowing that, if you want to have 2 different arguments to the python program, you can use a multi-prog configuration file:
+<code class="docutils literal notranslate"><span class="pre">srun</span> <span class="pre">-l</span> <span class="pre">--multi-prog</span> <span class="pre">silly.conf</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>  <span class="n">python</span> <span class="n">script</span> <span class="n">firstarg</span>
+<span class="mi">1</span>  <span class="n">python</span> <span class="n">script</span> <span class="n">secondarg</span>
+</pre></div>
+</div>
+<p>or by specifying a range of tasks</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span>  <span class="n">python</span> <span class="n">script</span> <span class="o">%</span><span class="n">t</span>
+</pre></div>
+</div>
+<p>%t being the taskid that your python script will parse.
+Note the <code class="docutils literal notranslate"><span class="pre">-l</span></code> on the <code class="docutils literal notranslate"><span class="pre">srun</span></code> command: this will prepend each line with the taskid (0:, 1:)</p>
+</div>
+<div class="section" id="sharing-a-node-with-multiple-gpu-1process-gpu">
+<h3>Sharing a node with multiple GPU 1process/GPU<a class="headerlink" href="#sharing-a-node-with-multiple-gpu-1process-gpu" title="Permalink to this headline">¶</a></h3>
+<p>On Compute Canada, several nodes, especially nodes with <code class="docutils literal notranslate"><span class="pre">largeGPU</span></code> (P100) are reserved for jobs requesting the whole node, therefore packing multiple processes in a single job can leverage faster GPU.</p>
+<p>If you want different tasks to access different GPUs in a single allocation you need to create an allocation requesting a whole node and using <code class="docutils literal notranslate"><span class="pre">srun</span></code> with a subset of those resources (1 GPU).</p>
+<p>Keep in mind that every resource not specified on the <code class="docutils literal notranslate"><span class="pre">srun</span></code> command while inherit the global allocation specification so you need to split each resource in a subset (except –cpu-per-task which is a per-task requirement)</p>
+<p>Each <code class="docutils literal notranslate"><span class="pre">srun</span></code> represents a job step (<code class="docutils literal notranslate"><span class="pre">%s</span></code>).</p>
+<p>Example for a GPU node with 24 cores and 4 GPUs and 128G of RAM
+Requesting 1 task per GPU</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --nodes=1-1</span>
+<span class="c1">#SBATCH --ntasks-per-node=4</span>
+<span class="c1">#SBATCH --output=myjob_output_wrapper.out</span>
+<span class="c1">#SBATCH --gres=gpu:4</span>
+<span class="c1">#SBATCH --cpus-per-task=6</span>
+srun --gres<span class="o">=</span>gpu:1 -n1 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s.out --exclusive --multi-prog python script args1 <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n1 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s.out --exclusive --multi-prog python script args2 <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n1 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s.out --exclusive --multi-prog python script args3 <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n1 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s.out --exclusive --multi-prog python script args4 <span class="p">&amp;</span>
+<span class="nb">wait</span>
+</pre></div>
+</td></tr></table></div>
+<p>This will create 4 output files:</p>
+<ul class="simple">
+<li><p>JOBID-step-0.out</p></li>
+<li><p>JOBID-step-1.out</p></li>
+<li><p>JOBID-step-2.out</p></li>
+<li><p>JOBID-step-3.out</p></li>
+</ul>
+</div>
+<div class="section" id="sharing-a-node-with-multiple-gpu-multiple-processes-gpu">
+<h3>Sharing a node with multiple GPU &amp; multiple processes/GPU<a class="headerlink" href="#sharing-a-node-with-multiple-gpu-multiple-processes-gpu" title="Permalink to this headline">¶</a></h3>
+<p>Combining both previous sections, we can create a script requesting a whole node with 4 GPUs, allocating 1 GPU per <code class="docutils literal notranslate"><span class="pre">srun</span></code> and sharing each GPU with multiple processes</p>
+<p>Example still with a 24 cores/4 GPUs/128G RAM
+Requesting 2 tasks per GPU</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --nodes=1-1</span>
+<span class="c1">#SBATCH --ntasks-per-node=8</span>
+<span class="c1">#SBATCH --output=myjob_output_wrapper.out</span>
+<span class="c1">#SBATCH --gres=gpu:4</span>
+<span class="c1">#SBATCH --cpus-per-task=3</span>
+srun --gres<span class="o">=</span>gpu:1 -n2 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s-task-%t.out --exclusive --multi-prog silly.conf <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n2 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s-task-%t.out --exclusive --multi-prog silly.conf <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n2 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s-task-%t.out --exclusive --multi-prog silly.conf <span class="p">&amp;</span>
+srun --gres<span class="o">=</span>gpu:1 -n2 --mem<span class="o">=</span>30G -l --output<span class="o">=</span>%j-step-%s-task-%t.out --exclusive --multi-prog silly.conf <span class="p">&amp;</span>
+<span class="nb">wait</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">--exclusive</span></code> is important to specify subsequent step/srun to bind to different cpus.</p>
+<p>This will produce 8 output files, 2 for each step:</p>
+<ul class="simple">
+<li><p>JOBID-step-0-task-0.out</p></li>
+<li><p>JOBID-step-0-task-1.out</p></li>
+<li><p>JOBID-step-1-task-0.out</p></li>
+<li><p>JOBID-step-1-task-1.out</p></li>
+<li><p>JOBID-step-2-task-0.out</p></li>
+<li><p>JOBID-step-2-task-1.out</p></li>
+<li><p>JOBID-step-3-task-0.out</p></li>
+<li><p>JOBID-step-3-task-1.out</p></li>
+</ul>
+<p>Running <code class="docutils literal notranslate"><span class="pre">nvidia-smi</span></code> in silly.conf, while parsing the output, we can see 4 GPUs allocated and 2 tasks per GPU</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">cat JOBID-step-* <span class="p">|</span> grep Tesla
+<span class="m">0</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:04:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">1</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:04:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">0</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:83:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">1</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:83:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">0</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:82:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">1</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:82:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">0</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:03:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span>
+<span class="m">1</span>: <span class="p">|</span>   <span class="m">0</span>  Tesla P100-PCIE...  On   <span class="p">|</span> <span class="m">00000000</span>:03:00.0 Off <span class="p">|</span>                    <span class="m">0</span> <span class="p">|</span></span>
+</pre></div></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mila-cluster/index.html" class="btn btn-neutral float-right" title="Mila Cluster" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Quick Start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

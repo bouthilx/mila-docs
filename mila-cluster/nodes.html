@@ -1,0 +1,560 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Cluster Nodes &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/>
+        <link rel="up" title="Mila Cluster" href="index.html"/>
+        <link rel="next" title="Compute Canada Clusters" href="../compute-canada-cluster/index.html"/>
+        <link rel="prev" title="1 Frequently asked questions (FAQs)" href="faq/index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mila Cluster</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html">Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/index.html">FAQs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cluster Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#complete-list-of-nodes">Complete List of Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-nodes">Special Nodes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#power9">Power9</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#amd">AMD</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#account-creation">Account Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#launching-jobs">Launching Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#storage">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#script-example">Script Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Mila Cluster</a> &raquo;</li>
+        
+      <li>Cluster Nodes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cluster/nodes.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cluster-nodes">
+<h1>Cluster Nodes<a class="headerlink" href="#cluster-nodes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="complete-list-of-nodes">
+<h2>Complete List of Nodes<a class="headerlink" href="#complete-list-of-nodes" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="node-list"></span><table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 6%" />
+<col style="width: 2%" />
+<col style="width: 6%" />
+<col style="width: 2%" />
+<col style="width: 4%" />
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" rowspan="4"><p>Name</p></th>
+<th class="head" colspan="4"><p>GPU</p></th>
+<th class="head" rowspan="4"><p>CPUs</p></th>
+<th class="head" rowspan="4"><p>Sockets</p></th>
+<th class="head" rowspan="4"><p>Cores/Socket</p></th>
+<th class="head" rowspan="4"><p>Threads/Core</p></th>
+<th class="head" rowspan="4"><p>Memory (Gb)</p></th>
+<th class="head" rowspan="4"><p>TmpDisk (Tb)</p></th>
+<th class="head" rowspan="4"><p>Arch</p></th>
+<th class="head" rowspan="2"><p>Features</p></th>
+</tr>
+<tr class="row-even"><th class="head" colspan="2" rowspan="2"><p>Primary</p></th>
+<th class="head" colspan="2" rowspan="2"><p>Secondary</p></th>
+</tr>
+<tr class="row-odd"><th class="head" rowspan="2"><p>GPU Arch and Memory</p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Model</p></th>
+<th class="head"><p>#</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>#</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td colspan="13"><p><span class="h"><h5 style="margin: 5px 0 0 0;">KEPLER</h5></span></p></td>
+</tr>
+<tr class="row-even"><td><p>kepler[2-3]</p></td>
+<td><p>k80</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>256</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>tesla,12GB</p></td>
+</tr>
+<tr class="row-odd"><td><p>kepler4</p></td>
+<td><p>m40</p></td>
+<td><p>4</p></td>
+<td></td>
+<td></td>
+<td><p>16</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>256</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>maxwell,24GB</p></td>
+</tr>
+<tr class="row-even"><td><p>kepler5</p></td>
+<td><p>v100</p></td>
+<td><p>2</p></td>
+<td><p>m40</p></td>
+<td><p>1</p></td>
+<td><p>16</p></td>
+<td><p>2</p></td>
+<td><p>4</p></td>
+<td><p>2</p></td>
+<td><p>256</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>volta,12GB</p></td>
+</tr>
+<tr class="row-odd"><td colspan="13"><p><span class="h"><h5 style="margin: 5px 0 0 0;">MILA</h5></span></p></td>
+</tr>
+<tr class="row-even"><td><p>mila01</p></td>
+<td><p>v100</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>2</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>512</p></td>
+<td><p>7</p></td>
+<td><p>x86_64</p></td>
+<td><p>tesla,16GB</p></td>
+</tr>
+<tr class="row-odd"><td><p>mila02</p></td>
+<td><p>v100</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>2</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>512</p></td>
+<td><p>7</p></td>
+<td><p>x86_64</p></td>
+<td><p>tesla,32GB</p></td>
+</tr>
+<tr class="row-even"><td><p>mila03</p></td>
+<td><p>v100</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>2</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>512</p></td>
+<td><p>7</p></td>
+<td><p>x86_64</p></td>
+<td><p>tesla,32GB</p></td>
+</tr>
+<tr class="row-odd"><td colspan="13"><p><span class="h"><h5 style="margin: 5px 0 0 0;">POWER9</h5></span></p></td>
+</tr>
+<tr class="row-even"><td><p>power9[1-2]</p></td>
+<td><p>v100</p></td>
+<td><p>4</p></td>
+<td></td>
+<td></td>
+<td><p>128</p></td>
+<td><p>2</p></td>
+<td><p>16</p></td>
+<td><p>4</p></td>
+<td><p>586</p></td>
+<td><p>0.88</p></td>
+<td><p>power9</p></td>
+<td><p>tesla,nvlink,16gb</p></td>
+</tr>
+<tr class="row-odd"><td colspan="13"><p><span class="h"><h5 style="margin: 5px 0 0 0;">TITAN RTX</h5></span></p></td>
+</tr>
+<tr class="row-even"><td><p>rtx[6,9]</p></td>
+<td><p>titanrtx</p></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td><p>20</p></td>
+<td><p>1</p></td>
+<td><p>10</p></td>
+<td><p>2</p></td>
+<td><p>128</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>turing,24gb</p></td>
+</tr>
+<tr class="row-odd"><td><p>rtx[1-5,7-8]</p></td>
+<td><p>titanrtx</p></td>
+<td><p>2</p></td>
+<td></td>
+<td></td>
+<td><p>20</p></td>
+<td><p>1</p></td>
+<td><p>10</p></td>
+<td><p>2</p></td>
+<td><p>128</p></td>
+<td><p>0.93</p></td>
+<td><p>x86_64</p></td>
+<td><p>turing,24gb</p></td>
+</tr>
+<tr class="row-even"><td colspan="13"><p><span class="h"><h5 style="margin: 5px 0 0 0;">New Compute Nodes</h5></span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cn-a[01-11]</strong></p></td>
+<td><p>rtx8000</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>2</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>380</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>turing,48gb</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cn-b[01-05]</strong></p></td>
+<td><p>v100</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>80</p></td>
+<td><p>2</p></td>
+<td><p>20</p></td>
+<td><p>2</p></td>
+<td><p>380</p></td>
+<td><p>3.6</p></td>
+<td><p>x86_64</p></td>
+<td><p>tesla,nvlink,32gb</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>cn-c[01-40]</strong></p></td>
+<td><p>rtx8000</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>64</p></td>
+<td><p>2</p></td>
+<td><p>32</p></td>
+<td><p>1</p></td>
+<td><p>386</p></td>
+<td><p>3</p></td>
+<td><p>x86_64</p></td>
+<td><p>turing,48gb</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>cn-d[01-02]</strong></p></td>
+<td><p>A100</p></td>
+<td><p>8</p></td>
+<td></td>
+<td></td>
+<td><p>256</p></td>
+<td><p>8</p></td>
+<td><p>16</p></td>
+<td><p>2</p></td>
+<td><p>1032</p></td>
+<td><p>1.4</p></td>
+<td><p>x86_64</p></td>
+<td><p>ampere,40gb</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="special-nodes">
+<h2>Special Nodes<a class="headerlink" href="#special-nodes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="power9">
+<h3>Power9<a class="headerlink" href="#power9" title="Permalink to this headline">¶</a></h3>
+<p id="power9-nodes"><a class="reference external" href="https://en.wikipedia.org/wiki/POWER9">Power9</a> servers are using a different processor instruction set than Intel and AMD (x86_64).
+As such you need to setup your environment again for those nodes specifically.</p>
+<ul class="simple">
+<li><p>Power9 Machines have 128 threads. (2 processors / 16 cores / 4 way SMT)</p></li>
+<li><p>4 x V100 SMX2 (16 GB) with NVLink</p></li>
+<li><p>In a Power9 machine GPUs and CPUs communicate with each other using NVLink instead of PCIe.</p></li>
+</ul>
+<p>This allow them to communicate quickly between each other. More on <a class="reference external" href="https://developer.ibm.com/linuxonpower/2019/05/17/performance-results-with-tensorflow-large-model-support-v2/">LMS</a></p>
+<p>Power9 have the same software stack as the regular nodes and each software should be included to deploy your environment
+as on a regular node.</p>
+</div>
+<div class="section" id="amd">
+<h3>AMD<a class="headerlink" href="#amd" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of August 20 the GPUs had to return back to AMD.
+Mila will get more samples. You can join the <a class="reference external" href="https://mila-umontreal.slack.com/archives/CKV5YKEP6/p1561471261000500">amd</a> slack channels to get the latest information</p>
+</div>
+<p>Mila has a few node equipped with <a class="reference external" href="https://www.amd.com/en/products/professional-graphics/instinct-mi50">MI50</a> GPUs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+span.prompt2:before {
+  content: " ";
+}
+</style><span class="prompt1">srun --gres<span class="o">=</span>gpu -c <span class="m">8</span> --reservation<span class="o">=</span>AMD --pty bash</span>
+<span class="prompt2"></span>
+<span class="prompt2"> first <span class="nb">time</span> setup of AMD stack</span>
+<span class="prompt1">conda create -n rocm <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.6</span>
+<span class="prompt1">conda activate rocm</span>
+<span class="prompt2"></span>
+<span class="prompt1">pip install tensorflow-rocm</span>
+<span class="prompt1">pip install /wheels/pytorch/torch-1.1.0a0+d8b9d32-cp36-cp36m-linux_x86_64.whl</span>
+</pre></div></div></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../compute-canada-cluster/index.html" class="btn btn-neutral float-right" title="Compute Canada Clusters" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="faq/index.html" class="btn btn-neutral" title="1 Frequently asked questions (FAQs)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

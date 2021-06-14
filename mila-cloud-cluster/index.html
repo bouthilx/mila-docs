@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mila Cloud Cluster &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mila-cluster/index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Mila Cloud Cluster</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cloud-cluster/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mila-cloud-cluster">
+<span id="milacloud"></span><h1>Mila Cloud Cluster<a class="headerlink" href="#mila-cloud-cluster" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Particular features</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#shared-folders">Shared Folders</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="slurm.html">SLURM Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#compute-nodes">Compute Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#automatic-routing">Automatic routing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#partitions">Partitions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="slurm.html#current-partitions-on-azure-gcp">Current partitions on Azure/GCP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="slurm.html#quotas">Quotas</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Good news, Mila in discussion with cloud providers has received cloud credits for Microsoft Azure and
+Google Cloud Compute (GCP) right now.</p>
+<div class="topic">
+<p class="topic-title">Do I need to learn how to use those cloud cluster?</p>
+<p>No.
+In the actual phase it is almost the same way you use the Mila-cluster. You will use SLURM, but you will have to connect to a particular login node. In a future phase all will be totally transparent, you will use the same login nodes, and all the data aspect will be taken care of.</p>
+</div>
+<div class="section" id="login-nodes">
+<h2>Login nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h2>
+<p>For convenience, a login node has currently been deployed in
+<em>Canada Central Region</em> (on Azure) and one in the <em>Central US Region</em> (GCP).</p>
+<p>When the current setup will be stable, the plan is to have one login node per region and per provider.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Provider</p></th>
+<th class="head"><p>Region</p></th>
+<th class="head"><p>IP</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Azure</p></td>
+<td><p><em>not available</em></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>AWS</p></td>
+<td><p>US</p></td>
+<td><p>3.91.250.238</p></td>
+</tr>
+<tr class="row-even"><td><p>GCP</p></td>
+<td><p>US</p></td>
+<td><p>104.154.137.18</p></td>
+</tr>
+</tbody>
+</table>
+<p>All login nodes run <em>Ubuntu 18.04</em> and support <em>passwordless</em> SSH only.</p>
+</div>
+<div class="section" id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="current-allocation">
+<h3>Current Allocation<a class="headerlink" href="#current-allocation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Azure:</dt><dd><ul>
+<li><p>32 x v100 with 16Gb of memory - 1/2/4 per node</p></li>
+<li><p>66 x k80 with 8Gb of memory (US Region) - 1/2/4 per node</p></li>
+<li><p>400 cores of cpu only machines: Compute(32Gb) / General(64Gb) / Memory(128Gb)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>GCP:</dt><dd><ul>
+<li><p>32 x v100 with 16Gb of memory - 1/2/4 per node</p></li>
+<li><p>66 x k80 with 8Gb of memory (US Region) - 1/2/4 per node</p></li>
+<li><p>400 cores of cpu only machines: Compute(32Gb) / General(64Gb) / Memory(128Gb)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>AWS: to come</p></li>
+</ul>
+<p>Instance info:</p>
+<ul class="simple">
+<li><p>Azure: <a class="reference external" href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu">https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sizes-gpu</a></p></li>
+<li><p>AWS: <a class="reference external" href="https://aws.amazon.com/ec2/instance-types/">https://aws.amazon.com/ec2/instance-types/</a></p></li>
+<li><p>GCP: <a class="reference external" href="https://cloud.google.com/compute/docs/machine-types">https://cloud.google.com/compute/docs/machine-types</a></p></li>
+</ul>
+</div>
+<div class="section" id="current-user-quota">
+<h3>Current User Quota<a class="headerlink" href="#current-user-quota" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Mins</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>v100</p></td>
+<td><p>40,000</p></td>
+</tr>
+<tr class="row-odd"><td><p>k80</p></td>
+<td><p>160,000</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU</p></td>
+<td><p>200,000</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Depending on your answers in the form, you can access non-preemptible machines with a 1/4 of the quota.</em></p>
+<p>To verify your quota on the current cloud against your allocated limits.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">squotas</span>
+</pre></div></div></div>
+</div>
+<div class="section" id="how-do-i-onboard-on-the-cloud">
+<h2>How do I onboard on the cloud?<a class="headerlink" href="#how-do-i-onboard-on-the-cloud" title="Permalink to this headline">¶</a></h2>
+<p>As the resources are limited, priority will be given according to the nearest deadline and needs.
+For those interested in beta testing or using this opportunity for the near deadline, please fill out this form
+<a class="reference external" href="https://docs.google.com/forms/d/1Q68cAeLUcxk3TGgtFItN_EgGY-EXaBledetJFGWfryY">https://docs.google.com/forms/d/1Q68cAeLUcxk3TGgtFItN_EgGY-EXaBledetJFGWfryY</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Contact/info:</p>
+<p>Contact Quentin Lux on Slack and join the <a class="reference external" href="https://mila-umontreal.slack.com/messages/CG695R7PD">Mila-Cloud-Cluster channel</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

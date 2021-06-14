@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1 New server for /home/ directories &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li><span class="sectnum">1</span> New server for <code class="docutils literal notranslate"><span class="pre">/home/</span></code> directories</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cluster/home_transition.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="new-server-for-home-directories">
+<span id="home-transition"></span><h1><span class="sectnum">1</span> New server for <code class="docutils literal notranslate"><span class="pre">/home/</span></code> directories<a class="headerlink" href="#new-server-for-home-directories" title="Permalink to this headline">¶</a></h1>
+<p>As things continue in these uncertain times, the new server to host your home directories
+is ready. It’s an all-flash server based on 48 NVMe disks and the BeeGFS parallel file system.</p>
+<p>To ensure a smooth transition we intend on keeping both servers running for a while and the transition
+will be on a voluntary basis. Before starting the process, remember to clean up your home directory
+a bit to accelerate the transfer for you and others.</p>
+<div class="section" id="how-to-opt-in-for-the-new-server">
+<h2><span class="sectnum">1.1</span> How to opt-in for the new server?<a class="headerlink" href="#how-to-opt-in-for-the-new-server" title="Permalink to this headline">¶</a></h2>
+<p>Simply create a file called <code class="docutils literal notranslate"><span class="pre">.flashme</span></code> in your home directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1"><span class="nb">cd</span> ~</span>
+<span class="prompt1">touch .flashme</span>
+</pre></div></div><p>A script a regularly scanning all home directories to gather users willing
+to activate the transition.
+Once your account is detected, the file will be renamed <code class="docutils literal notranslate"><span class="pre">.flashme_OK</span></code>
+and your account will be added to the following file: <code class="docutils literal notranslate"><span class="pre">/home/mila/flash.log</span></code>
+as well as the status of the transfer of your home directory to its new location
+(<code class="docutils literal notranslate"><span class="pre">pending</span></code>, <code class="docutils literal notranslate"><span class="pre">progress</span></code> or <code class="docutils literal notranslate"><span class="pre">done</span></code>).</p>
+</div>
+<div class="section" id="how-to-follow-the-progress-of-the-transfer">
+<h2><span class="sectnum">1.2</span> How to follow the progress of the transfer ?<a class="headerlink" href="#how-to-follow-the-progress-of-the-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Once your transfer is started, the output will be written to a file inside
+your current home directory named <code class="docutils literal notranslate"><span class="pre">.flash_progress</span></code>. Just <code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">~/.flash_progress</span></code>
+to get the transfer status.</p>
+</div>
+<div class="section" id="how-to-accelerate-the-transfer">
+<h2><span class="sectnum">1.3</span> How to accelerate the transfer ?<a class="headerlink" href="#how-to-accelerate-the-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Your whole home directory will be transferred except hidden files, <code class="docutils literal notranslate"><span class="pre">.conda/pkgs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.cache</span></code> and other not useful directories.
+By default, we use this <a class="reference external" href="https://github.com/rubo77/rsync-homedir-excludes/blob/master/rsync-homedir-excludes.txt">list</a>
+of excluded files for the transfer:</p>
+<p>You can accelerate the transfer and help
+the transition by cleaning-up your home a bit, for example by deleting any unused environments
+or even saving them to recreate them later.</p>
+<p>Here is an example of how to save your Conda environment</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1"><span class="c1"># Activate</span></span>
+<span class="prompt1">conda activate myenv</span>
+<span class="prompt1"><span class="c1"># Export</span></span>
+<span class="prompt1">conda env <span class="nb">export</span> &gt; ~/my_environment.yml</span>
+<span class="prompt1"></span>
+<span class="prompt1"><span class="c1"># Later on the new machine</span></span>
+<span class="prompt1">conda env create -f ~/my_environment.yml</span>
+</pre></div></div></div>
+<div class="section" id="what-happens-at-the-end-of-the-transfer">
+<h2><span class="sectnum">1.4</span> What happens at the end of the transfer ?<a class="headerlink" href="#what-happens-at-the-end-of-the-transfer" title="Permalink to this headline">¶</a></h2>
+<p>Until the end of the transfer, every time you log into the cluster, you will
+use your current (old) home directory. As soon as the transfer finishes, your home
+directory will be set to its new location:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/mila/first_letter/username
+</pre></div>
+</div>
+<p><strong>It can take time before the setting is applied</strong> since all machines have a cache
+of your account settings so it can take multiple connections before your new home is
+effective. If it’s an issue, please contact IT support.</p>
+</div>
+<div class="section" id="some-files-are-missing">
+<h2><span class="sectnum">1.5</span> Some files are missing ?<a class="headerlink" href="#some-files-are-missing" title="Permalink to this headline">¶</a></h2>
+<p>Your old home directory will be preserved for some months and will still be available
+at its current location <code class="docutils literal notranslate"><span class="pre">/network/home/username</span></code>. You can manually copy some files from it
+until it is deleted.</p>
+</div>
+<div class="section" id="and-kerberos">
+<h2><span class="sectnum">1.6</span> And Kerberos ?<a class="headerlink" href="#and-kerberos" title="Permalink to this headline">¶</a></h2>
+<p>The home server does not need a Kerberos ticket to let you access your files as it is secured
+with a different mechanism. It means password free ssh access with a private key should work as soon as
+you switch to the new one <strong>BUT</strong> some shared file-systems still require Kerberos like <code class="docutils literal notranslate"><span class="pre">tmp1</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sec</span></code>.</p>
+<p>During the transition, all users will still be required to get a Kerberos ticket to start
+jobs, running a SLURM command to start a job <code class="docutils literal notranslate"><span class="pre">sbatch/salloc</span></code> will guide you in the creation of a keytab
+(to automatically renew your ticket with password) and an initial ticket.</p>
+<p>If you have any issue with the integrated script, try running</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sticket</span>
+</pre></div></div><p>or contact helpdesk.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

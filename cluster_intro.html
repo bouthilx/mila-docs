@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>What is a computer Cluster ? &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="index.html"/>
+        <link rel="next" title="Quick Start" href="slurm/index.html"/>
+        <link rel="prev" title="Mila documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">What is a computer Cluster ?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-login-nodes">The Login Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-job-scheduler">The job scheduler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#compute-and-login-nodes-different-nodes-for-different-uses">Compute and Login nodes : Different nodes for different uses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-systems">File systems</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mila-cluster/index.html">Mila Cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>What is a computer Cluster ?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/cluster_intro.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-is-a-computer-cluster">
+<h1>What is a computer Cluster ?<a class="headerlink" href="#what-is-a-computer-cluster" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><p>A computer cluster is a set of loosely or tightly connected computers that
+work together so that, in many respects, they can be viewed as a single
+system.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Computer_cluster">Wikipedia</a></p>
+</div></blockquote>
+<p>In order to provide high performance computation capabilities, clusters can
+combine hundreds to thousands of computers, called <em>nodes</em>, which are all
+inter-connected with a high-performance communication network. Most nodes are
+designed for high-performance computations, but clusters can also use
+specialized nodes to offer parallel file systems, databases, login nodes and
+even the cluster scheduling functionality as pictured in the image below.</p>
+<img alt="_images/cluster_overview2.png" src="_images/cluster_overview2.png" />
+<p>All clusters typically run on GNU/Linux distributions. Hence a minimum
+knowledge of GNU/Linux and BASH is usually required to use them. See the
+following <a class="reference external" href="https://docs.computecanada.ca/wiki/Linux_introduction">tutorial</a>
+for a rough guide on getting started with Linux.</p>
+<div class="section" id="the-login-nodes">
+<h2>The Login Nodes<a class="headerlink" href="#the-login-nodes" title="Permalink to this headline">¶</a></h2>
+<p>To execute computing processes on a cluster, you must first connect to a login
+node. These login nodes are the entry point to most clusters. Another entry
+point to some clusters such as the Mila cluster is the JupyterHub WEB
+interface, but we’ll read about that later.</p>
+<p>For now let’s return to the subject of this section; Login nodes. To connect to
+these, you would typically use a remote shell connection. The most usual tool
+to do so is SSH. You’ll hear and read a lot about this tool. Imagine it as a
+very long (and somewhat magical) extension cord which connects the computer you
+are using now, such as your laptop, to a remote computer’s terminal shell. If
+you followed through with the tutorial in the section above, you already know
+what a terminal shell is.</p>
+</div>
+<div class="section" id="the-job-scheduler">
+<h2>The job scheduler<a class="headerlink" href="#the-job-scheduler" title="Permalink to this headline">¶</a></h2>
+<p>Once connected to a login node, presumably with SSH, you can issue a job
+execution request to what is called the job scheduler. The job scheduler used
+at Mila and Compute Canada clusters is called SLURM (<a class="reference internal" href="slurm/index.html#slurmpage"><span class="std std-ref">slurm</span></a>).
+The job scheduler’s main role is to find a place to run your program in what is
+simply called : <em>a job</em>. This “place” is in fact one of many computers
+synchronised to the scheduler which are called : <em>Compute Nodes</em>.</p>
+<p>In fact it’s a bit trickier than that, but we’ll stay at this abstraction level
+for now.</p>
+</div>
+<div class="section" id="compute-and-login-nodes-different-nodes-for-different-uses">
+<h2>Compute and Login nodes : Different nodes for different uses<a class="headerlink" href="#compute-and-login-nodes-different-nodes-for-different-uses" title="Permalink to this headline">¶</a></h2>
+<p>It is important to note here the difference in intended uses between the
+compute nodes and the login nodes.</p>
+<p>While the Compute Nodes are meant for heavy computation, the Login Nodes are
+not. In the field of artificial intelligence, you will usually be on the hunt
+for GPUs. The compute nodes are the ones with GPU capacity.</p>
+<p>The login nodes however are used by everyone who uses the cluster and care must
+be taken not to overburden these nodes. Consequently, only very short and light
+processes should be run on these otherwise the cluster may become inaccessible.
+In other words, please refrain from executing long or compute intensive
+processes on login nodes because it affects all other users. In some cases, you
+will also find that doing so might get you into trouble.</p>
+</div>
+<div class="section" id="file-systems">
+<h2>File systems<a class="headerlink" href="#file-systems" title="Permalink to this headline">¶</a></h2>
+<p>Clusters have different types of file systems to support different data
+storage use cases. We differentiate them by name. You’ll hear or read about
+file systems such as “home”, “scratch” or “project” and so on.</p>
+<p>Most of these file systems are are provided in a way which is globally available to all nodes in the cluster. Software or data required by jobs can be accessed from any node on the cluster. (See <a class="reference internal" href="mila-cluster/index.html#milacluster-storage"><span class="std std-ref">Mila</span></a> or <a class="reference internal" href="compute-canada-cluster/index.html#cc-storage"><span class="std std-ref">CC</span></a> for more information on available file systems)</p>
+<p>Different file systems have different performance levels. For instance, backed
+up file-systems ( such as <code class="docutils literal notranslate"><span class="pre">$PROJECT</span></code> ) provide more space and can handle large
+files but cannot sustain highly parallel accesses typically required for high speed model training.</p>
+<p>Each compute node has local file systems ( of which <code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> ) that
+are usually more efficient but any data remaining on these will be erased at
+the end of the job execution for the next job to come along.</p>
+</div>
+</div>
+<div class="section" id="resources-available-at-mila">
+<h1>Resources Available at Mila<a class="headerlink" href="#resources-available-at-mila" title="Permalink to this headline">¶</a></h1>
+<p>This table contains the computational resources Mila has access to.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This table is outdated and needs to be revisited.</p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 44%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Cluster</p></th>
+<th class="head"><p>CPUs</p></th>
+<th class="head"><p>GPUs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="mila-cluster/index.html#milacluster"><span class="std std-ref">Mila</span></a></p></td>
+<td></td>
+<td><p>248</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="compute-canada-cluster/index.html#beluga"><span class="std std-ref">Beluga</span></a></p></td>
+<td><p>34k</p></td>
+<td><p>688 V100</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="compute-canada-cluster/index.html#cedar"><span class="std std-ref">Cedar</span></a></p></td>
+<td><p>27k</p></td>
+<td><p>584 P100</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="compute-canada-cluster/index.html#graham"><span class="std std-ref">Graham</span></a></p></td>
+<td><p>36k</p></td>
+<td><p>320 P100</p></td>
+</tr>
+<tr class="row-even"><td><p>Helios</p></td>
+<td></td>
+<td><p>216 k80</p></td>
+</tr>
+<tr class="row-odd"><td><p>Niagara</p></td>
+<td><p>60k</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p>134k</p></td>
+<td><p>2040</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="simple">
+<dt><a class="reference internal" href="mila-cluster/index.html#milacluster"><span class="std std-ref">Mila Cluster</span></a></dt><dd><p>This cluster is to be used for regular development and relatively small
+number of jobs (&lt; 5)</p>
+</dd>
+<dt><a class="reference internal" href="compute-canada-cluster/index.html#cc-clusters"><span class="std std-ref">Compute Canada Clusters</span></a> The clusters Beluga, Cedar,</dt><dd><p>Graham, Helios and Niagara are clusters provided by Compute Canada on which we
+have allocations. These are to be used for many jobs, multi-nodes and/or
+multi-GPU jobs as well as long running jobs</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="slurm/index.html" class="btn btn-neutral float-right" title="Quick Start" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Mila documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/language_data.js"></script>
+      <script type="text/javascript" src="_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="_static/copybutton.js"></script>
+      <script type="text/javascript" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,595 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mila Cluster &mdash; MILA Docs latest documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="MILA Docs latest documentation" href="../index.html"/>
+        <link rel="next" title="Monitoring" href="monitoring/index.html"/>
+        <link rel="prev" title="Advanced Usage" href="../slurm/advanced.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> MILA Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html">What is a computer Cluster ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cluster_intro.html#resources-available-at-mila">Resources Available at Mila</a></li>
+</ul>
+<p class="caption"><span class="caption-text">The batch scheduler: Slurm</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/index.html#basic-usage">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../slurm/advanced.html">Advanced Usage</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Computing Clusters</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mila Cluster</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html">Monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/index.html">FAQs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes.html">Cluster Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#account-creation">Account Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launching-jobs">Launching Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#special-gpu-requirements">Special GPU requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpu-only-jobs">CPU-only jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#script-example">Script Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../compute-canada-cluster/index.html">Compute Canada Clusters</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/tools.html">Tools</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Containers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.html">Docker/Shifter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../singularity/index.html">Singularity</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MILA Docs</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Mila Cluster</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/mila-iqia/mila-docs/blob/master/docs/mila-cluster/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mila-cluster">
+<span id="milacluster"></span><h1>Mila Cluster<a class="headerlink" href="#mila-cluster" title="Permalink to this headline">¶</a></h1>
+<p>The Mila Cluster is an heterogeneous cluster. It uses <a class="reference internal" href="../slurm/index.html#slurmpage"><span class="std std-ref">SLURM</span></a> to schedule jobs.</p>
+<div class="contents local topic" id="id1">
+<p class="topic-title">Mila Cluster</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#account-creation" id="id2">Account Creation</a></p></li>
+<li><p><a class="reference internal" href="#login" id="id3">Login</a></p></li>
+<li><p><a class="reference internal" href="#launching-jobs" id="id4">Launching Jobs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#special-gpu-requirements" id="id5">Special GPU requirements</a></p></li>
+<li><p><a class="reference internal" href="#cpu-only-jobs" id="id6">CPU-only jobs</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#modules" id="id7">Modules</a></p></li>
+<li><p><a class="reference internal" href="#storage" id="id8">Storage</a></p></li>
+<li><p><a class="reference internal" href="#script-example" id="id9">Script Example</a></p></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="monitoring/index.html">Monitoring</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="monitoring/index.html#notable-sections">Notable Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq/index.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq/index.html#connection-ssh"><span class="sectnum">1.1</span> Connection/SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/index.html#shell"><span class="sectnum">1.2</span> Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/index.html#slurm"><span class="sectnum">1.3</span> SLURM</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nodes.html">Cluster Nodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nodes.html#complete-list-of-nodes">Complete List of Nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodes.html#special-nodes">Special Nodes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="account-creation">
+<h2><a class="toc-backref" href="#id2">Account Creation</a><a class="headerlink" href="#account-creation" title="Permalink to this headline">¶</a></h2>
+<p>To access the Mila Cluster clusters, you will need an account. Please contact Mila systems administrators if you don’t have it already. Our IT support service is available here: <a class="reference external" href="https://it-support.mila.quebec/">https://it-support.mila.quebec/</a></p>
+</div>
+<div class="section" id="login">
+<h2><a class="toc-backref" href="#id3">Login</a><a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<p>You can access the Mila cluster via ssh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+</style><span class="prompt1">ssh &lt;user&gt;@login.server.mila.quebec -p <span class="m">2222</span></span>
+</pre></div></div><p>4 login nodes are available and accessible behind a Load-Balancer.
+At each connection, you will be redirected to the least loaded login-node.
+Each login node can be directly accessed via: <code class="docutils literal notranslate"><span class="pre">login-X.login.server.mila.quebec</span></code> on port <code class="docutils literal notranslate"><span class="pre">2222</span></code>.</p>
+<p>The login nodes support the following authentication mechanisms: <code class="docutils literal notranslate"><span class="pre">publickey,keyboard-interactive</span></code>.
+If you would like to set an entry in your <code class="docutils literal notranslate"><span class="pre">.ssh/config</span></code> file, please use the following recommendation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host HOSTALIAS
+    User YOUR-USERNAME
+    Hostname login.server.mila.quebec
+    PreferredAuthentications publickey,keyboard-interactive
+    Port <span class="m">2222</span>
+    ServerAliveInterval <span class="m">120</span>
+    ServerAliveCountMax <span class="m">5</span>
+</pre></div>
+</div>
+<p>The RSA, DSA and ECDSA fingerprints for Mila’s login nodes are:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SHA256:baEGIa311fhnxBWsIZJ/zYhq2WfCttwyHRKzAb8zlp8 <span class="o">(</span>ECDSA<span class="o">)</span>
+SHA256:XvukABPjV75guEgJX1rNxlDlaEg+IqQzUnPiGJ4VRMM <span class="o">(</span>DSA<span class="o">)</span>
+SHA256:Xr0/JqV/+5DNguPfiN5hb8rSG+nBAcfVCJoSyrR0W0o <span class="o">(</span>RSA<span class="o">)</span>
+SHA256:gfXZzaPiaYHcrPqzHvBi6v+BWRS/lXOS/zAjOKeoBJg <span class="o">(</span>ED25519<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="launching-jobs">
+<h2><a class="toc-backref" href="#id4">Launching Jobs</a><a class="headerlink" href="#launching-jobs" title="Permalink to this headline">¶</a></h2>
+<p>Since we don’t have many GPUs on the cluster, resources must be shared as fairly as possible.
+The <code class="docutils literal notranslate"><span class="pre">--partition=/-p</span></code> flag of SLURM allows you to set the priority you need for a job.
+Each job assigned with a priority can preempt jobs with a lower priority:
+<code class="docutils literal notranslate"><span class="pre">unkillable</span> <span class="pre">&gt;</span> <span class="pre">main</span> <span class="pre">&gt;</span> <span class="pre">long</span></code>. Once preempted, your job is killed without notice and is automatically re-queued
+on the same partition until resources are available. (To leverage a different preemption mechanism,
+see the <a class="reference internal" href="../slurm/advanced.html#advanced-preemption"><span class="std std-ref">Handling preemption</span></a>)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Flag</p></th>
+<th class="head"><p>Max Resource Usage</p></th>
+<th class="head"><p>Max Time</p></th>
+<th class="head"><p>Note</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–partition=unkillable</p></td>
+<td><p>1 GPU, 6 CPUs, mem=32G</p></td>
+<td><p>2 days</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>–partition=main</p></td>
+<td><p>2 GPUs, 8 CPUs, mem=48G</p></td>
+<td><p>2 days</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>–partition=long</p></td>
+<td><p>no limit of resources</p></td>
+<td><p>7 days</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>For instance, to request an unkillable job with 1 GPU, 4 CPUs, 10G of RAM and 12h of computation do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch --gres<span class="o">=</span>gpu:1 -c <span class="m">4</span> --mem<span class="o">=</span>10G -t <span class="m">12</span>:00:00 --partition<span class="o">=</span>unkillable &lt;job.sh&gt;</span>
+</pre></div></div><p>You can also make it an interactive job using <code class="docutils literal notranslate"><span class="pre">salloc</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">salloc --gres<span class="o">=</span>gpu:1 -c <span class="m">4</span> --mem<span class="o">=</span>10G -t <span class="m">12</span>:00:00 --partition<span class="o">=</span>unkillable</span>
+</pre></div></div><p>The Mila cluster has many different types of nodes/GPUs. To request a specific type of node/GPU, you can
+add specific feature requirements to your job submission command.</p>
+<p>To access those special nodes you need to request them explicitly by adding the flag <code class="docutils literal notranslate"><span class="pre">--constraint=&lt;name&gt;</span></code>.
+The full list of nodes in the Mila Cluster can be accessed <a class="reference internal" href="nodes.html#node-list"><span class="std std-ref">here</span></a>.</p>
+<p><em>Example:</em></p>
+<p>To request a Power9 machine</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch -c <span class="m">4</span> --constraint<span class="o">=</span>power9</span>
+</pre></div></div><p>To request a machine with 2 GPUs using NVLink, you can use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch -c <span class="m">4</span> --gres<span class="o">=</span>gpu:2 --constraint<span class="o">=</span>nvlink</span>
+</pre></div></div><table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Particularities</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>x86_64 (Default)</p></td>
+<td><p>Regular nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Power9</p></td>
+<td><p><a class="reference internal" href="nodes.html#power9-nodes"><span class="std std-ref">Power9</span></a> CPUs (incompatible with x86_64 software)</p></td>
+</tr>
+<tr class="row-even"><td><p>12GB/16GB/24GB/32GB/48GB</p></td>
+<td><p>Request a specific amount of <em>GPU</em> memory</p></td>
+</tr>
+<tr class="row-odd"><td><p>maxwell/pascal/volta/tesla/turing/kepler</p></td>
+<td><p>Request a specific <em>GPU</em> architecture</p></td>
+</tr>
+<tr class="row-even"><td><p>nvlink</p></td>
+<td><p>Machine with GPUs using the NVLink technology</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You don’t need to specify <em>x86_64</em> when you add a constraint as it is added by default ( <code class="docutils literal notranslate"><span class="pre">nvlink</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">x86_64&amp;nvlink</span></code> )</p>
+</div>
+<div class="section" id="special-gpu-requirements">
+<h3><a class="toc-backref" href="#id5">Special GPU requirements</a><a class="headerlink" href="#special-gpu-requirements" title="Permalink to this headline">¶</a></h3>
+<p>Specific GPU <em>architecture</em> and <em>memory</em> can be easily requested through the <code class="docutils literal notranslate"><span class="pre">--gres</span></code> flag by using either</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--gres=gpu:architecture:memory:number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gres=gpu:architecture:number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gres=gpu:memory:number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--gres=gpu:model:number</span></code></p></li>
+</ul>
+<p><em>Example:</em></p>
+<p>To request a Tesla GPU with <em>at least</em> 16GB of memory use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sbatch -c <span class="m">4</span> --gres<span class="o">=</span>gpu:tesla:16gb:1</span>
+</pre></div></div><p>The full list of GPU and their features can be accessed <a class="reference internal" href="nodes.html#node-list"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="section" id="cpu-only-jobs">
+<h3><a class="toc-backref" href="#id6">CPU-only jobs</a><a class="headerlink" href="#cpu-only-jobs" title="Permalink to this headline">¶</a></h3>
+<p>Since the priority is given to the usage of GPUs, CPU-only jobs have a low priority and can only consume <strong>4 cpus maximum per node</strong>.
+The partition for CPU-only jobs is named <code class="docutils literal notranslate"><span class="pre">cpu_jobs</span></code> and you can request it with <code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">cpu_jobs</span></code> or if you don’t specify any GPU, you will be
+automatically rerouted to this partition.</p>
+</div>
+</div>
+<div class="section" id="modules">
+<h2><a class="toc-backref" href="#id7">Modules</a><a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>Many software, such as Python and Conda, are already compiled and available on the cluster through the <code class="docutils literal notranslate"><span class="pre">module</span></code> command and
+its sub-commands. In particular, if you with to use <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">3.7</span></code> you can simply do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">module load python/3.7</span>
+</pre></div></div><p>Please look at the <a class="reference internal" href="../software/index.html#modules"><span class="std std-ref">Module</span></a> and <a class="reference internal" href="../software/python.html#python"><span class="std std-ref">Python</span></a> sections for more details.</p>
+</div>
+<div class="section" id="storage">
+<span id="milacluster-storage"></span><h2><a class="toc-backref" href="#id8">Storage</a><a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 37%" />
+<col style="width: 21%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Path</p></th>
+<th class="head"><p>Usage</p></th>
+<th class="head"><p>Quota (Space/Files)</p></th>
+<th class="head"><p>Auto-cleanup*</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>/home/mila/&lt;u&gt;/&lt;username&gt;/</p></td>
+<td><ul class="simple">
+<li><p>Personal user space</p></li>
+<li><p>Specific libraries/code</p></li>
+</ul>
+</td>
+<td><p>200G/1000K</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>/miniscratch/</p></td>
+<td><ul class="simple">
+<li><p>Temporary job results</p></li>
+</ul>
+</td>
+<td></td>
+<td><p>3 months</p></td>
+</tr>
+<tr class="row-even"><td><p>/network/projects/&lt;groupname&gt;/</p></td>
+<td><ul class="simple">
+<li><p>Long-term project storage</p></li>
+</ul>
+</td>
+<td><p>200G/1000K</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>/network/data1/</p></td>
+<td><ul class="simple">
+<li><p>Raw datasets (read only)</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>/network/datasets/</p></td>
+<td><ul class="simple">
+<li><p>Curated raw datasets (read only)</p></li>
+</ul>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>$SLURM_TMPDIR</p></td>
+<td><ul class="simple">
+<li><p>High speed disk for
+temporary job results</p></li>
+</ul>
+</td>
+<td></td>
+<td><p>at job end</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">home</span></code> folder is appropriate for codes and libraries which are small and read once, as well as the experimental results you wish to keep (e.g. the weights of a network you have used in a paper).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">data1</span></code> folder should only contain <strong>compressed</strong> datasets.</p></li>
+<li><p>To request the addition of a dataset into <code class="docutils literal notranslate"><span class="pre">datasets</span></code>, <a class="reference external" href="https://docs.google.com/forms/d/e/1FAIpQLSf3XyKpvMaIHV2MaDBbFIVJCCcWLpo2HTjkQ94f-ebMRpY97Q/viewform?usp=sf_link/">this form</a> should be filled <code class="docutils literal notranslate"><span class="pre">datasets</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$SLURM_TMPDIR</span></code> points to the local disk of the node on which a job is running. It should be used to copy the data on the node at the beginning of the job and write intermediate checkpoints. This folder is cleared after each job.</p></li>
+<li><p><strong>Auto-cleanup</strong> is applied on files not touched during the specified period</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We currently do not have a backup system in the lab. You should backup whatever you want to keep on your laptop, google drive, etc.</p>
+</div>
+</div>
+<div class="section" id="script-example">
+<h2><a class="toc-backref" href="#id9">Script Example</a><a class="headerlink" href="#script-example" title="Permalink to this headline">¶</a></h2>
+<p>Here is a <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> script that follows good practices on the Mila cluster:</p>
+<div class="highlight-bash notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#SBATCH --partition=unkillable                      # Ask for unkillable job</span>
+<span class="c1">#SBATCH --cpus-per-task=2                     # Ask for 2 CPUs</span>
+<span class="c1">#SBATCH --gres=gpu:1                          # Ask for 1 GPU</span>
+<span class="c1">#SBATCH --mem=10G                             # Ask for 10 GB of RAM</span>
+<span class="c1">#SBATCH --time=3:00:00                        # The job will run for 3 hours</span>
+<span class="c1">#SBATCH -o /network/tmp1/&lt;user&gt;/slurm-%j.out  # Write the log on tmp1</span>
+
+<span class="c1"># 1. Load the required modules</span>
+module --quiet load anaconda/3
+
+<span class="c1"># 2. Load your environment</span>
+conda activate &lt;env_name&gt;
+
+<span class="c1"># 3. Copy your dataset on the compute node</span>
+cp /network/data/&lt;dataset&gt; <span class="nv">$SLURM_TMPDIR</span>
+
+<span class="c1"># 4. Launch your job, tell it to save the model in $SLURM_TMPDIR</span>
+<span class="c1">#    and look for the dataset into $SLURM_TMPDIR</span>
+python main.py --path <span class="nv">$SLURM_TMPDIR</span> --data_path <span class="nv">$SLURM_TMPDIR</span>
+
+<span class="c1"># 5. Copy whatever you want to save on $SCRATCH</span>
+cp <span class="nv">$SLURM_TMPDIR</span>/&lt;to_save&gt; /network/tmp1/&lt;user&gt;/
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="monitoring/index.html" class="btn btn-neutral float-right" title="Monitoring" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../slurm/advanced.html" class="btn btn-neutral" title="Advanced Usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> and ❤️  using a custom <a href="https://github.com/LinxiFan/Sphinx-theme">theme</a> based on <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'latest',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+      <script type="text/javascript" src="../_static/clipboard.min.js"></script>
+      <script type="text/javascript" src="../_static/copybutton.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options.js"></script>
+      <script type="text/javascript" src="../_static/documentation_options_fix.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
